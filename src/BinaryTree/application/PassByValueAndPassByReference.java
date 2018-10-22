@@ -24,7 +24,10 @@ public class PassByValueAndPassByReference{
 		swap(s1,s2);
 		System.out.println("After swapping the strings "+s1+" "+s2);
 	}
-	
+
+	private static void swap(String s1,String s2){
+	}
+
 	/**
 		When we use primitive type along with String also then java typically acts as a pass
 		 by value as it simply copies the original value of the parameter to another memory
