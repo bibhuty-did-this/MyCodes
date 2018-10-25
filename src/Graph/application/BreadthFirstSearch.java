@@ -27,7 +27,6 @@ public class BreadthFirstSearch{
 			while(!queue.isEmpty()){
 				int current=queue.poll();
 				System.out.print(current+" ");
-				visited[current]=true;
 				for(int vertex:adjList[current]){
 					if(!visited[vertex]){
 						queue.add(vertex);
