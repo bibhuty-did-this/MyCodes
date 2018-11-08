@@ -5,6 +5,8 @@ public class RodCuttingProblem{
 	public static int rodCuttingProblem(int price[]){
 		int n=price.length;
 		int[] dp=new int[n+1];
+		// For each length find the optimal length of all
+		// the lengths below it
 		for(int length=1;length<=n;++length)
 			for(int bLength=1;bLength<=length;++bLength)
 				dp[length]=max(dp[length],price[bLength-1]+dp[length-bLength]);
