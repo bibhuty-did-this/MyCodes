@@ -1,5 +1,3 @@
-package BinaryTree.application;
-
 public class PassByValueAndPassByReference{
 	public static void main(String args[]){
 		/*
