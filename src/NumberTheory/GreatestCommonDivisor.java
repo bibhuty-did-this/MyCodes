@@ -34,7 +34,7 @@ public class GreatestCommonDivisor {
     public static void main(String[] args) {
         GreatestCommonDivisor gcd=new GreatestCommonDivisor();
         Data data=new Data();
-        int a=16,b=10;
+        int a=6,b=2;
         gcd.extendedEuclidean(a,b,data);
         if(data.gcd==gcd.gcd(a,b)){
             System.out.println("The values of `a` and `b` respectively are "+a+" & "+b);
