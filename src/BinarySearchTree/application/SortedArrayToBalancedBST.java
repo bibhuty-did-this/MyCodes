@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 // Time complexity:O(n)
-public class SortedArrayToBST{
+public class SortedArrayToBalancedBST{
 	static class Node{
 		int data;
 		Node left,right;
