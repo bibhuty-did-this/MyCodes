@@ -89,6 +89,9 @@ public class MinHeap{
 	 * nodes are in place except for one node which we need to recursively heapify
 	 * starting from some given root node.
 	 *
+	 * One more property of heapify is in order to heapify a particular node we
+	 * need to ensure that all the child nodes are heapified order.
+	 *
 	 * @param i
 	 */
 	void minHeapify(int i){
