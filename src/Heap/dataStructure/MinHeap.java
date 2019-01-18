@@ -102,6 +102,7 @@ public class MinHeap{
 
 		if(l<index && Heap[l]<Heap[i])
 			smallest=l;
+		// This step is there to ensure that largest element goes to the top
 		if(r<index && Heap[r]<Heap[smallest])
 			smallest=r;
 
