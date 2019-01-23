@@ -1,5 +1,8 @@
 package BinaryTree.application;
 
+/**
+ * Diameter of a tree is the longest path between two end nodes
+ */
 public class DiameterOfBinaryTree{
 	
 	static class Node{
