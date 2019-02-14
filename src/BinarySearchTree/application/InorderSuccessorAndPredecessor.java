@@ -1,6 +1,5 @@
 package BinarySearchTree.application;
 
-// Wrong solution
 public class InorderSuccessorAndPredecessor {
     // Special class to take care of the parent
     static class Node{
