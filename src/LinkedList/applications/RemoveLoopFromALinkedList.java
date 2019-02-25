@@ -49,7 +49,7 @@ class LinkedList_RemoveLoopFromALinkedList{
 		}
 		current.next=null;
 	}
-	Node_RemoveLoopFromALinkedList cycleExists(){;
+	Node_RemoveLoopFromALinkedList cycleExists(){
 		if(head==null)return null;
 		Node_RemoveLoopFromALinkedList fast=head,slow=head;
 		while(fast!=null && fast.next!=null){
