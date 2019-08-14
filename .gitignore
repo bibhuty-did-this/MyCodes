@@ -3,3 +3,5 @@
 .idea/workspace.xml
 /*.iml
 *.iml
+*.class
+/out/*
