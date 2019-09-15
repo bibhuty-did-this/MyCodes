@@ -1,0 +1,67 @@
+What does streams do for us ?
+    1. separates what from how
+    2. functional in nature
+    3. focus on whole instead of parts
+
+What is stream ?
+    1. It is not a data structure
+    2. It is a higher level of abstraction of a classic for loop
+       (without fiddling with the minute details as forEach loop)
+    3. It is non-mutating
+       (not modifying a collection when inside a stream)
+    4. A view of how data is transformed
+    5. A pipeline
+
+How to use streams ?
+    1. Raise from concrete(collection, as they are initialized, populated etc.) to stream
+    2. Ride the stream
+    3. Compose operation
+
+Streams employ function composition
+
+Stateless behaviour
+
+Pure functions
+
+Specialized functions:
+    - filter
+    - map
+    - reduce
+      (often is going to result in a single point which may be a value or collection itself,
+       brings you back to the concrete operation unlike above)
+        - general reduce
+        - specialized
+            - sum
+            - max
+            - min
+            - count
+
+Characteristics: sized, ordered, distinct, sorted
+    - depends on source
+    - depends on operation
+
+Raise, Operate and Land(pattern of operation in streams)
+
+Use care landing
+
+Important operations:
+    - set
+    - map
+    - grouping by
+
+Sorting with comparator
+    - sorted with comparator
+    - comparing
+    - thenComparing
+
+Efficiency ?
+
+Intermediate vs Terminal Operation
+
+Fuzing and lazy evaluation
+
+Infinite streams
+    - Short-circuiting intermediate and terminal operations
+
+Parallel streams
+    -

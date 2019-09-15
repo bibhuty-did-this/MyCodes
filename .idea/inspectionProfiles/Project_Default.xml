@@ -6,5 +6,11 @@
         <language minSize="79" name="Java" />
       </Languages>
     </inspection_tool>
+    <inspection_tool class="Duplicates" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Java>
+        <minSize>144</minSize>
+        <isEnabled>true</isEnabled>
+      </Java>
+    </inspection_tool>
   </profile>
 </component>
