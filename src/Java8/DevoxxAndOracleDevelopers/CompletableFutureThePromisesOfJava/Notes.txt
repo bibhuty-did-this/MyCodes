@@ -1,0 +1,42 @@
+Topics:
+~ Lessons from Javascript callback
+
+~ Promises:
+    - may resolve, reject or pending
+    - data/error channel
+    - failure/error is like data
+    - easy to compose
+
+~ What about Java ?
+
+~ CompletableFuture in Java is Promises in JavaScript
+
+~ Stages(segment of pipeline where you perform various functions and move from one stage to another)
+
+~ One stage completes, then another stage may run
+
+~ Creating a completable future
+
+~ Thread of execution
+
+~ Changing the pool
+
+~ thenAccept
+
+~ thenApply
+
+~ thenRun
+
+~ creating pipe, then completing
+
+~ dealing with exceptions
+
+~ chaining
+
+~ success on timeout
+
+~ fail on timeout
+
+~ combine
+
+~ compose
