@@ -1,4 +1,4 @@
-package Java8.Devoxx.ProgrammmingWithStreams.example;
+package Java8.DevoxxAndOracleDevelopers.ProgrammmingWithStreams.example;
 
 import java.util.*;
 import java.util.stream.Collectors;
