@@ -1,7 +1,7 @@
 package Java8.DevoxxAndOracleDevelopers.CompletableFutureThePromisesOfJava;
 
-import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 public class CreatingPipelineAndCompletingTheSame {
     public static int handle(Throwable throwable){
@@ -19,8 +19,8 @@ public class CreatingPipelineAndCompletingTheSame {
 
     public static void main(String[] args) {
         CompletableFuture<Integer> future=new CompletableFuture<>();
-        // future.completeOnTimeOUt(500,3, TimeUnit.SECONDS); // Java9 implementation
-        // future.orTimeOut(3,TimeUnit.SECONDS); // Java9 implementation
+        future.completeOnTimeout(500,3, TimeUnit.SECONDS); // Java9 implementation
+        future.orTimeout(3,TimeUnit.SECONDS); // Java9 implementation
         sleep(3000);
         process(future);
         future.complete(2);
