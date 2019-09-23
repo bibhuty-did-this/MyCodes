@@ -1,0 +1,13 @@
+~ What is a lambda expression ?
+    - A cute little anonymous function
+
+~ Using lambda expression
+    - Removing redundant noise from anonymous functions
+    - Typically function has 4 things:
+        1. name(what's in the name could be anonymous)
+        2. parameter list(extremely important)
+        3. body(extremely important)
+        4. return type(could be inferred)
+
+~ How lambda fits into java philosophy ?
+    - 

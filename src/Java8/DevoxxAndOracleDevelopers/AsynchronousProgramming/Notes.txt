@@ -1,0 +1,76 @@
++ Synchronous vs Asynchronous:
+    ~ Is asynchronous any faster ?(Well, it can be as it is non-blocking)
+
++ Difference between asynchronous from synchronous multithreaded model ?
+    ~ The async engine decides to switch from one context to another
+    ~ Single threaded = no issue with atomicity or visiblity
+
++ Callback or task: lambda expression:
+    ~ When the result is available we can continue with the next task
+
++ A task in Java7:
+    ~ Passing an object from one task to another has to be handled in the <<master>> thread
+    ~ This things are automatically handled in Java 8
+
++ Asynchronous Programming:
+    ~ It brings a new solution to chain task and can handle both multithreaded & async programming
+
++ CompletionStage/CompletableFuture:
+    ~ Two elements in this API:
+        - an interface: CompletionStage
+        - an implementing class: CompletableFuture
+
++ CompletionStage:
+    ~ A model for a task:
+        - that performs an action that may return a value when another completion stage completes
+        - that may trigger another task
+    ~ So a completion stage is an element of chain
+
++ CompletableFuture:
+    ~ A class that implements both Future and CompletionStage
+    ~ It has a state:
+        - the task may be running
+        - the task may have completed normally
+        - the task may have completed exceptionally
+    ~ Methods from future:(cancel, isCanceled, isDone, get, get(...))
+    ~ More methods:(around 60 methods)
+        - join - may throw an unchecked exception
+        - getNow(val) - returns immediately
+        - complete(val) - sets the return value if not returned to val
+        - obtrudeValue(val) - resets the returned value to val
+        - completeExceptionally(val) - sets an exception
+        - obtrudeException(val) - resets with an exception
+
++ Building CompletionStage chains:
+    ~ A CompletionStage is a step in chain:
+        - it can be triggered by a previous CompletionStage
+        - it can trigger another CompletionStage
+        - it can be exxecuted in a given Executor
+
++ What is task ?
+    ~ it can be a Function
+    ~ it can be a Consumer
+    ~ it can be a Runnable
+
++ What kind of operations CompletionStage supports ?
+    ~ chaining(1 -1)
+    ~ composing(1 -1)
+    ~ combining, waiting for both results(2 - 1)
+    ~ combining, triggered on the first available result(2 - 1)
+
++ In what thread it can be executed ?
+    ~ In the same executor as the caller
+    ~ In a new executor, passed as parameter
+    ~ Asynchronously, i.e. in the common fork join pool
+
++ Exception Handling:
+    ~ So a completable future depends on:
+        - one CompletableFuture
+        - two CompletableFuture
+        - N CompletableFuture
+    ~ What happens when an exception is thrown ?
+        - When only one of the CompletableFuture fails:
+            -> the call to isCompletedExceptionally() returns true
+            -> the call to get() throws an ExecutorException whose cause if the root exception
+        - CompletableFuture can handle exception in their own
+          (can return only successful CompletableFuture in their own)
