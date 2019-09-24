@@ -10,4 +10,36 @@
         4. return type(could be inferred)
 
 ~ How lambda fits into java philosophy ?
-    - 
+    - Single abstract method interfaces are used to implement the same
+
+~ Lambdas under the hood:
+    - It is not a syntactic sugar which swallows the lambda and replace with anonymous inner class
+    - The more anonymous inner classes it create the more classes will be inside the jar/war file we
+    create, where we'll have bloated jar file because of our lambda uses, which is not advisable.
+    - invokedynamic: gives function pointer in JVM(i.e. attach and detach to function in runtime as you wish)
+    - When you create a lambda expression:
+        + The call under the hood becomes invokedynamic
+        + The lambda expression becomes one of the three depending on the situation:
+            - static method
+            - instance method
+            - routing of invoke dynamic to existing method of another class
+
+~ Transforming iterations:
+    - from imperative
+    - to functional
+
+~ Why lambda should be limited to very few lines ?
+    - The code is too hard to read
+    - It's noisy
+    - Leads to duplication
+
+~ A peek at method references:(only when you directly wanna pass what you receive to next journey)
+    - parameter as an argument
+    - parameter as an argument to a static method
+    - parameter as a target
+    - two parameter as arguments
+    - two parameters, one as target and another as argument
+
+~ Limitations of method references:
+    - Can't use them if you are doing any manipulation of data
+    - Can't use them if there's a conflict between instance and static methods
