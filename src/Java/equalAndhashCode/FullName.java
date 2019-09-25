@@ -21,6 +21,7 @@ public class FullName{
 		return first.equals(fullName.first) && last.equals(fullName.last);
 	}
 
+	@Override
 	public int hashCode(){
 		return 31*first.hashCode()*last.hashCode();
 	}

@@ -52,6 +52,22 @@ public class StreamSample {
                 ));
 
         // grouping by
+        System.out.println("Grouping by names and getting the exact data without any changes: "+
+                    people
+                        .stream()
+                        .collect(Collectors.groupingBy(Person::getName))
+        );
+
+        System.out.println(
+                    people
+                        .stream()
+                        .collect(
+                                Collectors.groupingBy(
+                                        Person::getName,
+                                        Collectors.mapping(Person::getAge,Collectors.toList())
+                                ))
+        );
+
     }
     public static List<Person> createPeople(){
         return Arrays.asList(

@@ -87,4 +87,14 @@
         + to list
         + to set
         + to map
-    - grouping by
+
+~ grouping by
+
+~ grouping by and mapping
+
+~ Efficiency of streams
+    + Streams are lazy
+    + Unless the terminal operation is called it doesn't work on its own
+    + All the data points are not evaluated in each stage, rather one data point
+      goes through each stage in a single pipeline. It stops when the terminal operation
+      is done doing its job(just like `break` statement in case of `findFirst()`)
