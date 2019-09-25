@@ -43,3 +43,48 @@
 ~ Limitations of method references:
     - Can't use them if you are doing any manipulation of data
     - Can't use them if there's a conflict between instance and static methods
+
+~ Function Composition
+
+~ Parallelling it
+    - It'll use a lot of threads to get the work done, so we need to be careful about it
+
+~ Lambdas are cool, but streams are awesome
+
+~ Stream as abstraction
+    - A set, list, map is data or say physical object
+    - A stream is an abstraction i.e. not a physical data is a bunch
+    of functions which you'll evaluate eventually.
+    - There's no data sitting on stream, you cann't point one unlike collections.
+
+~ Non-mutating pipeline
+    - We are not mutating the original data as we go through the abstraction at each
+    and every step.
+
+~ Revisiting stream operations:
+    - filter
+        + 0 <= #(elements in output) <= #(elements in input)
+        + parameter: Stream<T> filter takes Predicate<T>
+        + it stays within its swimlanes(taking care of single
+        data point and is not affected by data points around it) like map
+    - map
+        + transforms values
+        + #(output) = #(input)
+        + no guarantee on type of output wrt type of input
+        + parameter: Stream<T> map take Function<T,R> to return Stream<R>
+        + it stays within its swimlanes(not looking to what's in left or right,
+        keep things to yourself) like filter
+    - reduce
+        + cuts across the swimlanes
+        + reduce on Stream<T> takes 2 parameters:
+            1. first parameter of type T
+            2. second parameter of BiFunction<R,T,R> to produce a result of R
+        + it may transform a collection into a single value potentially or
+          it may transform into a non-stream or a concrete type that is
+    - specialized reduces
+    - sum
+    - collect
+        + to list
+        + to set
+        + to map
+    - grouping by
