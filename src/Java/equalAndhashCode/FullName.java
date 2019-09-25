@@ -28,6 +28,8 @@ public class FullName{
 	public static void main(String[] args){
 		Set<FullName> s=new HashSet<>();
 		s.add(new FullName("Bibhuti","Panda"));
+		s.add(new FullName("Bibhuti","Panda"));
 		System.out.println(s.contains(new FullName("Bibhuti","Panda")));
+		System.out.println(s.size());
 	}
 }
