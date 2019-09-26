@@ -98,3 +98,18 @@
     + All the data points are not evaluated in each stage, rather one data point
       goes through each stage in a single pipeline. It stops when the terminal operation
       is done doing its job(just like `break` statement in case of `findFirst()`)
+    + Lazy(or say efficient in context of java) evaluation is done here
+    + Also, note that for lazy evaluation to be effective the functions couldn't have
+      any side effects(or say exception handling may be).
+    + Any stream that returns non-stream becomes eager evaluation at that point.
+
+~ Characteristics of streams:
+    + sized
+    + ordered
+    + distinct
+    + sorted
+
+~ Infinite streams
+    + Infinite stream cann't exist without laziness
+    + Laziness can not exist without no side effect
+    + No side effect can not exist without immutability

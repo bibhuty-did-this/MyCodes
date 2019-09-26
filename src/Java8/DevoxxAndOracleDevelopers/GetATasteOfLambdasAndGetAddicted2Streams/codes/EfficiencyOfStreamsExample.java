@@ -1,28 +1,9 @@
 package Java8.DevoxxAndOracleDevelopers.GetATasteOfLambdasAndGetAddicted2Streams.codes;
 
-import Java8.DevoxxAndOracleDevelopers.ProgrammmingWithStreams.example.Gender;
-import Java8.DevoxxAndOracleDevelopers.ProgrammmingWithStreams.example.Person;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class EfficiencyOfStreamsExample {
-    public static List<Person> createPeople(){
-        return Arrays.asList(
-                new Person("Sara", Gender.FEMALE,20),
-                new Person("Sara",Gender.FEMALE,22),
-                new Person("Zara",Gender.FEMALE,22),
-                new Person("Bob",Gender.MALE,20),
-                new Person("Paula",Gender.FEMALE,32),
-                new Person("Paul",Gender.MALE,32),
-                new Person("Jack",Gender.MALE,22),
-                new Person("Jack",Gender.MALE,32),
-                new Person("Jack",Gender.TRANS,44),
-                new Person("Jill",Gender.FEMALE,12),
-                new Person("Jill",Gender.TRANS,17)
-        );
-    }
 
     public static void insertNumbers(List<Integer> numbers){
         for(int i=1;i<=20;++i)numbers.add(i);
@@ -41,7 +22,15 @@ public class EfficiencyOfStreamsExample {
             }
         }
         System.out.println("Result from imperative style: "+result);
-        System.out.println("Result from functional or declarative type: "+
+        System.out.println("Result from functional or declarative type without terminal operation: "+
+            numbers
+                .stream()
+                .filter(EfficiencyOfStreamsExample::isGreaterThan3)
+                .filter(EfficiencyOfStreamsExample::isEven)
+                .map(EfficiencyOfStreamsExample::doubleIt)
+                //.findFirst()
+        );
+        System.out.println("Result from functional or declarative type(lazy evaluation): "+
             numbers
                 .stream()
                 .filter(EfficiencyOfStreamsExample::isGreaterThan3)
