@@ -1,0 +1,11 @@
+- Using reflections you can inspect java classes in runtime.
+- From classes you can get informations about:
+    + Class name
+    + Class modifiers
+    + Package info
+    + Superclass
+    + Implemented Interface
+    + Constructors
+    + Methods
+    + Fields
+    + Annotations
