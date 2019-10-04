@@ -60,12 +60,12 @@ public class Sample{
         System.out.println("\nMethods inside `Cat` class are: ");
         Arrays.stream(methods).forEach(System.out::println);
 
-        // Fields inside a class
+        // Fields inside a class(only public fields)
         Field[] fields=catObject.getFields();
         System.out.println("\nFields inside a class");
         Arrays.stream(fields).map(Field::getName).forEach(System.out::println);
 
-        // Getting annotations
+        // Getting annotations(annotations in class level not in field)
         Annotation[] annotations=catObject.getAnnotations();
         System.out.println("\nAnnotations inside a class");
         Arrays.stream(annotations).forEach(System.out::println);
