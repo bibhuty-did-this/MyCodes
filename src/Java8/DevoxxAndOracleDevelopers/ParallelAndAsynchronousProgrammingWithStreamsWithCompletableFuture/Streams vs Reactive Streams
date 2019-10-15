@@ -1,0 +1,8 @@
+Streams                                             Reactive Stream
+--------------------------------------              ---------------------------------------------------
+
+sequential vs parallel                              sync vs async
+
+entire pipeline is sequential/parallel              depends
+no segment                                          subscribeOn - no segment
+                                                    observeOn - segment

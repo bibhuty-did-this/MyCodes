@@ -1,0 +1,17 @@
+// We solve one set of problems only to create a new set of problem
+
+// Java 1 - Threads
+// Java 5 - ExecutorService(Pool induced deadlock)
+// Java 7 - ForkJoinPool(Used by Java8 parallel stream to solve the problem and generally uses CommonForkJoinPool)
+
+// Some methods are ordered and some are not and there is a possibility that they have an ordered counterpart
+
+// How many thread can I create ? -- Bad question
+// How many thread should I create ? -- Correct question
+
+// Computation Intensive vs IO Intensive:
+// - For Computation Intensive: #Threads <= #Cores
+// - For IO Intensive: #Threads may be greater than #Cores
+// - #T <= (#Cores/(1-blocking factor))
+// - NOTE: This is the number of threads that could be created by the operation not we should create
+

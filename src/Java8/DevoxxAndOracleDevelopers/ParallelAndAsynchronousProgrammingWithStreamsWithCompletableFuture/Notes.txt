@@ -1,0 +1,24 @@
+- Parallel vs Asynchronous:
+    + nature of problem
+    + when to use parallel/concurrently(fork, then join the continue)
+    + when to use asynchronous
+
+- Parallel Stream:
+    + collection pipeline pattern
+    + from imperative to functional
+    + benefits of pipeline pattern
+    + parallel as a master switch
+    + sequential execution
+    + stream to parallel stream
+    + observing threads
+    + order of execution
+    + controlling the order(only possible when the stream is ordered)
+    + parallel and filter
+    + parallel and map
+    + parallel and reduce
+    + using parallel stream
+        ~ on an IO problem
+        ~ on a computational problem
+    + How many threads?
+    + Formula to decide number of threads
+    + Default number of threads
