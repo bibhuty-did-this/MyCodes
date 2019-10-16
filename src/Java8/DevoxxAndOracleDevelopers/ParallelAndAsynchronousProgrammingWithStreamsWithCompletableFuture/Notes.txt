@@ -21,4 +21,10 @@
         ~ on a computational problem
     + How many threads?
     + Formula to decide number of threads
-    + Default number of threads
+    + Default number of threads(#cores in machine)
+    + Configure number of threads JVM wide(not recommended)
+        -D java.util.Concurrent.ForkJoinPool.common.parallelism=100
+    + Configuring programmatically number of threads
+    + Parallel doesn't always mean fast
+        - How to decide whether to make parallel
+    + When parallel make no sense

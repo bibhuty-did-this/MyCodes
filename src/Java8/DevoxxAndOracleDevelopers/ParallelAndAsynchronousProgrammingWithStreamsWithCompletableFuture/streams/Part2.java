@@ -1,4 +1,4 @@
-package Java8.DevoxxAndOracleDevelopers.ParallelAndAsynchronousProgrammingWithStreamsWithCompletableFuture;
+package Java8.DevoxxAndOracleDevelopers.ParallelAndAsynchronousProgrammingWithStreamsWithCompletableFuture.streams;
 
 import java.util.Arrays;
 import java.util.List;

@@ -15,3 +15,9 @@
 // - #T <= (#Cores/(1-blocking factor))
 // - NOTE: This is the number of threads that could be created by the operation not we should create
 
+// Case when parallel makes no sense
+// - findFirst(as it is ordered by default, no matter what you do you'll get the first value)
+// - finaAny(as it'll give a result depending on thread, there's no consistency)
+// - Also, in many cases the computation increases in case of parallel stream for getting a
+//   simple work done. As streams work lazily, so there are chances that it'll calculate many
+//   values in parallel before calculating the findFirst in many cases
