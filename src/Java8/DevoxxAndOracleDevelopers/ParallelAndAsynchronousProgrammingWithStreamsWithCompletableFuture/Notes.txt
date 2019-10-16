@@ -28,3 +28,22 @@
     + Parallel doesn't always mean fast
         - How to decide whether to make parallel
     + When parallel make no sense
+
+- CompletableFutures:
+    + Asynchronous execution(non-blocking)
+    + Drawbacks of Future
+    + Lessons from Javascript
+    + Callbacks
+        ~ lacks consistency(if the callback is data or error)
+        ~ hard to compose(callback hell problem)
+        ~ hard to deal with errors
+    + Promises
+        ~ may resolve, reject or pending
+        ~ data channel and error channel
+        ~ failure/error is like data
+        ~ easy to compose
+    + What about Java?
+    + CompletableFuture in Java is Promises in Javascript
+    + Stages
+    + One stage completes and another stage may run
+    + Creating a completable future

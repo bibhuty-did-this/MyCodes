@@ -21,3 +21,16 @@
 // - Also, in many cases the computation increases in case of parallel stream for getting a
 //   simple work done. As streams work lazily, so there are chances that it'll calculate many
 //   values in parallel before calculating the findFirst in many cases
+
+// Drawbacks of future:
+// - When you want to work with future you make a call and the call gives you a future
+//   but to get it you need to call `future.get()` which is a blocking operation, and
+//   you are stuck(say, you have no future at all). So it is not a good idea in many cases.
+
+// Exception handling and functional programming are mutually exclusive. You don't do
+// exceptions with functional programming.
+
+// CompletableFuture has stages, which are nothing but pipeline of execution, i.e. you
+// can go from one stage to another stage to another stage in completable future. And it
+// is to be noted that every stage in completable future actually returns a completable
+// future in turn.
