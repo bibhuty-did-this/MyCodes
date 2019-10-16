@@ -34,3 +34,38 @@
 // can go from one stage to another stage to another stage in completable future. And it
 // is to be noted that every stage in completable future actually returns a completable
 // future in turn.
+
+// Famous or popular functional interface           Streams             CompletableFuture
+// - Supplier<T> T get                            - factories           - supplyAsync
+// - Predicate<T> boolean test(T)                 - filter
+// - Function<T,R> R apply(T)                     - map
+// - Consumer<T> void accept(T)                   - forEach             - thenAccept
+
+// CompletableFutures are immortal as they never die, i.e every stage returns a CompletableFuture
+
+//                  Streams vs/and Completable Future
+//        Streams                         Completable Future
+//        ----------------------          ----------------------------
+//
+//        zero, one or more data          at most have one data or error
+//
+//        only data channel               data channel and error channel
+//
+//        lazy                            lazy
+//
+//        forEach - Consumer              thenAccept(just as accept)
+//        accept
+//
+//        map - Function                  thenApply(just as apply)
+//        apply
+//
+//        reduce                          thenCombine
+//
+//        flatMap
+//
+//        exception - oops                exception - error channel
+
+// Completable future has 3 states: resolved, reject, pending
+// The question is how long you could be in `pending` state ? That needs to be resolved
+// Solution: Both in life and programming, never do something without timeout
+//

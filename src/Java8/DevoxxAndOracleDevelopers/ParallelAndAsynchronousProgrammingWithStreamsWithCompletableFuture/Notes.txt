@@ -47,3 +47,17 @@
     + Stages
     + One stage completes and another stage may run
     + Creating a completable future
+    + get vs getNow
+    + thread of execution
+    + changing the pool
+    + async vs non-async
+    + thenAccept(can be used to find success or failure)
+    + thenApply(for transformation purpose)
+    + thenRun(message for previous operation's status or message displaying)
+    + creating pipe, then completing
+    + dealing with exception
+    + chaining
+    + succeed on timeout
+    + fail on timeout
+    + combine
+    + compose
