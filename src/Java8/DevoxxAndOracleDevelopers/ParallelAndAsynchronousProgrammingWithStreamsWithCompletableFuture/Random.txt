@@ -68,4 +68,10 @@
 // Completable future has 3 states: resolved, reject, pending
 // The question is how long you could be in `pending` state ? That needs to be resolved
 // Solution: Both in life and programming, never do something without timeout
-//
+
+// In case of streams:
+//  - function returns data: map
+//  - function returns Stream: flatMap
+// In case of CompletableFuture:
+//  - function returns data: thenAccept/thenApply
+//  - function returns CompletableFuture: thenCompose
