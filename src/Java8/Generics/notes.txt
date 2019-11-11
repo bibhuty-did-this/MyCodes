@@ -1,0 +1,64 @@
+Generics:
+    - Generic enables types(classes and interfaces) to be parameters when defining classes, interfaces & methods.
+    - It differs from formal parameters of method as, the inputs in formal parameters are values, while the inputs to
+      type parameters are types.
+    - Benefits of using generics:
+        + Stronger type checks at compile time
+        + Elimination of casts
+        + Enabling programmers to use generic algorithms
+
+
+Generic Type:
+    + A generic type is a generic class or interface that is parameterized over type
+    + NOTE: A type variable can be any non-primitive type you specify: any class type, any interface type, any array
+      type, or even another type variable.
+
+Type naming conventions:
+    + E - Element
+    + K - Key
+    + N - Number
+    + T - Type
+    + V - Value
+    + S,U,V etc. - 2nd, 3rd, 4th... parameters
+
+Bounded Type Parameters:
+    + There may be times when you want to restrict the types that can be used as type arguments in a parameterized type.
+    + To declare a bounded type parameter, list the type parameter's name, followed by the extends keyword, followed by
+      its upper bound, which in this example is Number
+
+NOTE:
+    + Integer, Double `is a` kind of Object; but
+    + Box<Integer> has no `is a` relationship with Box<Double> if we've defined Box<Number>.
+      We've to extend or implement the same with one another to do the same. So direct assignment
+      is not possible without extending or implementing it. EX: Collection<T> -> List<T> -> ArrayList<T>
+
+Wildcards:
+    + In generic code, the `?` is called wildcard, represents and unknown type.
+    + It can be used in situations like:
+        1. as the type of a parameter, field or local variable
+        2. sometimes as a return type(not recommended though)
+
+Unbounded Wildcards:
+    + It is useful when:
+        - you are writing a code that can be implemented using functionality provided in the Object class
+        - the code is using method in generic class that don't depend on type parameter. e.g. List.size(), List.clear()
+
+    + Note: List<Object> & List<?> are not similar ones, we can insert only null in List<?> but any subclass of Object
+            can be inserted into List<Object>
+
+Subtyping in wildcards:
+    + List<?> is like `Object` of any List<T>
+
+Guidelines of using wildcards:
+    + https://docs.oracle.com/javase/tutorial/java/generics/wildcardGuidelines.html
+
+Restrictions on Generics
+    - To use Java generics effectively, you must consider the following restrictions:
+        + Cannot Instantiate Generic Types with Primitive Types
+        + Cannot Create Instances of Type Parameters
+        + Cannot Declare Static Fields Whose Types are Type Parameters
+        + Cannot Use Casts or instanceof With Parameterized Types
+        + Cannot Create Arrays of Parameterized Types
+        + Cannot Create, Catch, or Throw Objects of Parameterized Types
+        + Cannot Overload a Method Where the Formal Parameter Types of Each Overload Erase to the Same Raw Type
+
