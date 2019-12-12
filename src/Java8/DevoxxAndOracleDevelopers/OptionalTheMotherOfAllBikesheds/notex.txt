@@ -1,0 +1,62 @@
+- Optional
+    + Optional<T> introduced in Java8
+    + Can be in 2 states:
+        ~ contains a non-null reference to T (also called present)
+        ~ is empty (also called absent(don't say null))
+    + Primitive specializations:
+        ~ OptionalInt, OptionalLong, OptionalDouble
+    + Optional itself is a reference type, and can be null - DON'T
+    + It is immutable, you cann't set the value of optional after it is created
+
+- Why is Optional useful ?
+    + Rationale for Optional:
+        ~ Optional is intended to provide a `limited` mechanism for library method `return
+          types` where there is a clear need to represent "no result", and where using `null`
+          for that is `overwhelmingly likely to cause errors`
+        ~ Optional doesn't replaces null references.
+
+- orElse() family:
+    + orElse  - returns the value if present, `or else` a default value
+    + orElseGet - returns a value if present, `or else gets` a default value by calling supplier
+    + orElseThrow - returns a value if present, `or else throws` and exception obtained from a supplier
+
+- Methods inside optional:
+    + filter()
+    + ifPresent()
+    + Optional.empty() -- returns an empty Optional and is a static method
+    + Optional.of(T) -- returns a present Optional containing T and is a static method(T != null)
+    + flatMap
+    + Optional.equals() and hashCode()
+    + Technique: unit testing a method that returns Optional - assertEquals(....)
+
+- Stream of Optional:
+    + ...filter(Optional::isPresent).map(Optional::get)... - Java8
+    + ...flatMap(Optional::stream)... - Java9
+
+- Adapting between `null` and Optional:
+    + Optional.ofNullable(...).orElse(...)
+
+- Use, Abstruse Use, and Abuse:
+    + Places not to use Optional:
+        ~ Remember, Optional is a box:
+            - consumes 16 bytes
+            - is a separate Object(potentially adds GC pressure)
+            - always requires a dependent load, leading to cache miss
+            - a single Optional is OK, but if you litter your data structures with many Optional instances,
+              it can easily turn into a performance problem.
+        ~ Don't replace every null with an Optional:
+            - null can be safe, if it's well controlled
+            - null in a private field can be easily checked
+            - nullable parameters are ok
+
+- RULES:
+    + 1: Never, ever, use null for an Optional variable or Optional return value
+    + 2: Never use Optional.get() unless you can prove that the Optional is present
+    + 3: Prefer alternatives to Optional.isPresent() and Optional.get()
+    + 4: It's generally a bad idea to create an Optional for the specific purpose of chaining methods from it to get value
+        ~ return Optional.ofNullable(s).orElseGet(this::getDefault); // Bad
+        ~ return s!=null ? s : getDefault(); // Good
+    + 5: If an Optional chain is nested or has an intermediate result of Optional<Optional<T>>, its probably too complex
+        ~ result=Optional.of(first.orElse(ZERO).add(second.orElse(ZERO))); // check is both are empty and return accordingly
+    + 6: Avoid using Optional in fields, method parameters, and collections
+    + 7: Avoid using identity-sensitive operations on Optionals
