@@ -1,6 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/encodings.xml
 .idea/workspace.xml
+.idea/misc.xml
+.idea/*
+.idea/codeStyles/*
 /*.iml
 *.iml
 *.class
