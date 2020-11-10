@@ -19,8 +19,8 @@ public class CreatingPipelineAndCompletingTheSame {
 
     public static void main(String[] args) {
         CompletableFuture<Integer> future=new CompletableFuture<>();
-        future.completeOnTimeout(500,3, TimeUnit.SECONDS); // Java9 implementation
-        future.orTimeout(3,TimeUnit.SECONDS); // Java9 implementation
+        //future.completeOnTimeout(500,3, TimeUnit.SECONDS); // Java9 implementation
+        //future.orTimeout(3,TimeUnit.SECONDS); // Java9 implementation
         sleep(3000);
         process(future);
         future.complete(2);

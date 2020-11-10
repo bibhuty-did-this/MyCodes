@@ -25,9 +25,9 @@ public class Part5 {
             .thenApply(data->data+1)
             .thenAccept(System.out::println);
 
-        future.completeOnTimeout(-10,2, TimeUnit.SECONDS); // Java9 feature
+        //future.completeOnTimeout(-10,2, TimeUnit.SECONDS); // Java9 feature
 
-        future.orTimeout(2,TimeUnit.SECONDS);
+        //future.orTimeout(2,TimeUnit.SECONDS);
 
         sleep(3000);
         if(Math.random()>.5)
