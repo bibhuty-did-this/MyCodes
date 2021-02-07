@@ -17,8 +17,6 @@ public class Code_1238C_StandardFree2Play {
             int[] p=new int[n];
             in=new StringTokenizer(reader.readLine());
             for(int i=0;i<n;++i)p[i]=Integer.parseInt(in.nextToken());
-
-
         }
         out.flush();
         out.close();
